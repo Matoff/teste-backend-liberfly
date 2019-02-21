@@ -1,0 +1,29 @@
+SELECT 
+incidente.id,
+cliente.nome,
+cliente.telefone,
+cliente.email,
+origem.sigla as origem,
+destino.sigla as destino,
+incidente.numero_voo
+FROM incidente
+INNER JOIN cliente ON incidente.id_cliente = cliente.id
+INNER JOIN aeroporto origem ON incidente.aeroporto_origem = origem.id
+INNER JOIN aeroporto destino ON incidente.aeroporto_destino = destino.id
+ORDER BY cliente.id
+
+
+SELECT 
+incidente.id,
+cliente.nome,
+cliente.telefone,
+cliente.email,
+origem.sigla as origem,
+destino.sigla as destino,
+incidente.numero_voo
+FROM incidente
+INNER JOIN cliente ON incidente.id_cliente = cliente.id
+INNER JOIN aeroporto origem ON incidente.aeroporto_origem = origem.id
+INNER JOIN aeroporto destino ON incidente.aeroporto_destino = destino.id
+WHERE incidente.id = ****1
+ORDER BY cliente.id

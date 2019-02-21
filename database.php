@@ -1,10 +1,10 @@
 <?php
 class Database
 {
-    private static $dbName = 'crud_tutorial' ;
+    private static $dbName = 'liberfly' ;
     private static $dbHost = 'localhost' ;
     private static $dbUsername = 'root';
-    private static $dbUserPassword = 'root';
+    private static $dbUserPassword = '123456';
      
     private static $cont  = null;
      
