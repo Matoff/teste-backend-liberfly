@@ -53,6 +53,9 @@ Dividir tabelas.
         numero_voo
         **naturalmente só pode ser criada quando um usuario é criado antes.
 
+DATABASE NAME: liberfly
+
+
 
 legenda::
     FK = foreign key

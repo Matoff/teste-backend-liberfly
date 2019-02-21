@@ -1,0 +1,20 @@
+INSERT INTO `cliente` (`nome`, `telefone`, `email`) VALUES (
+    'Wadson marcia', '984234387', 'h@g.com'),
+    ('Kylton Saura', '123454321', 'f@r.com'), 
+    ('Edmundo Cassemiro', '172536123', 'r@t.com'),
+    ('Raimundira M ', '743726487', 'd@p.com'),
+    ('Pricila Kilder', '123123323', 'y@i.com')
+    
+INSERT INTO `aeroporto`(`sigla`) VALUES 
+	('POA'),
+    ('VIX'),
+    ('CGH'),
+    ('GRU')
+
+INSERT INTO `incidente`(`id_cliente`, `aeroporto_origem`, `aeroporto_destino`, `numero_voo`) VALUES 
+    (1,2,1,2534),
+    (1,1,2,4323),
+    (1,4,3,4234),
+    (1,2,4,4556),
+    (1,3,4,6538)
+
