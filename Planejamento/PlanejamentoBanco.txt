@@ -1,0 +1,59 @@
+O desafio é criar um crud simples em PHP e que salve os dados no banco de dados
+
+O cliente necesita de informações que trabalhem com:
+    Nome
+    Telefone
+    E-mail
+    aeroporto_origem
+    aeroporto_destino
+    numero_voo
+
+Planejamento do banco de dados
+-Nome-
+    varchar 255 ( ou mais)
+-telefone-
+    Somente numeros é interessante. Mas deve se levar em conta numeros estrangeiros
+    o código do Pais é uma quatidade amais que deve ser levada quando falamos de voos
+    * ate hoje não existe um codigo de pais com mais de 3 digitos. ( BRasil 2 +55)
+    * codigo de area mais dois digitos. (Es norte 27)
+    * o padrão de numeros de celular hoje são 9 digitos.
+    * int de 13 digitos torna o sistema aceitavel para os padrões. 
+-e-mail-
+    varchar 255 ( ou mais, texto variavel)
+    * comfirmação de formato email email@email.com ( necessario )
+-aeroporto_origem-
+    Todos os exemplos apresentados são caracteres de tres numeros. Apos uma pesquisa 
+    é comum a numeclatura de tres letras. char(3) para velocidade. 
+    *pesquisar se existe previsão desse padrão mudar, ou aumentar o numero de letras representativas
+-aeroporto destino-
+    char(3)
+    *pesquisar se existe previsão desse padrão mudar, ou aumentar o numero de letras representativas
+-numero_voo-
+    a identificação do voo pode ser conferida por ate tres letras e ate quatro numeros. ( confirmar 
+    se algo internacional ou nacional)
+    *char(3) + int(4) para internacional
+    *int(4) para nacional
+    ****CONFIRMAR****
+
+Dividir tabelas.
+    cliente
+        IDentificação
+        Nome
+        telefone
+        email
+    aeroporto
+        IDentificação
+        sigla(ou nome do aeroporto)
+        **evitar repetição de dados
+    incidente
+        IDentificação
+        cliente (FK)
+        aeroporto_origem (FK -> aeroporto)
+        aeroporto_destino (FK -> aeroporto)
+        numero_voo
+        **naturalmente só pode ser criada quando um usuario é criado antes.
+
+
+legenda::
+    FK = foreign key
+

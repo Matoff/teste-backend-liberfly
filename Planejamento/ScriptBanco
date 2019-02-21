@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS cliente (
+    id INT AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    telefone INT NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS aeroporto (
+	id INT AUTO_INCREMENT NOT NULL,
+    siglar CHAR (3) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS incidente (
+	id INT AUTO_INCREMENT NOT NULL,
+    id_cliente INT NOT NULL,
+    aeroporto_origem INT NOT NULL,
+    aeroporto_destino INT NOT NULL,
+    numero_voo INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id),
+    FOREIGN KEY (aeroporto_origem) REFERENCES aeroporto(id),
+    FOREIGN KEY (aeroporto_destino) REFERENCES aeroporto(id)
+)
+    
